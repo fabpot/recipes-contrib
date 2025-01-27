@@ -1,0 +1,30 @@
+{
+    "manifests": {
+        "redjanym/fcm-bundle": {
+            "manifest": {
+                "bundles": {
+                    "RedjanYm\\FCMBundle\\RedjanYmFCMBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "FCM_DEFAULT_SERVICE_ACCOUNT_FILE_PATH": "YOUR_FCM_SERVICE_ACCOUNT_FILE_ABSOLUTE_PATH"
+                }
+            },
+            "files": {
+                "config/packages/redjan_ym_fcm.yaml": {
+                    "contents": [
+                        "redjan_ym_fcm:",
+                        "    service_account_file: '%env(resolve:FCM_DEFAULT_SERVICE_ACCOUNT_FILE_PATH)%'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "072f9cdb457aa54b0f97411bb03a30c8de8e9514"
+        }
+    }
+}
